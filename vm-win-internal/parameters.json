@@ -2,23 +2,8 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "location": {
-            "value": "westus2"
-        },
-        "networkInterfaceName": {
-            "value": "satta-test24"
-        },
-        "subnetName": {
-            "value": "NpeWkdWu2PvtSubnet"
-        },
-        "virtualNetworkId": {
-            "value": "/subscriptions/19dbcfe8-2cba-4c2d-b902-0927a4b7feec/resourceGroups/npeAppNtwWu2Rg/providers/Microsoft.Network/virtualNetworks/npeAppWu2Vnet"
-        },
         "virtualMachineName": {
             "value": "Satta-Test"
-        },
-        "virtualMachineRG": {
-            "value": "NpeWkdDevWu2Rg"
         },
         "osDiskType": {
             "value": "Premium_LRS"
@@ -37,6 +22,15 @@
         },
         "diagnosticsStorageAccountId": {
             "value": "/subscriptions/19dbcfe8-2cba-4c2d-b902-0927a4b7feec/resourceGroups/NpeWkdDevWu2Rg/providers/Microsoft.Storage/storageAccounts/npewkddevwu2rgdiag892"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/19dbcfe8-2cba-4c2d-b902-0927a4b7feec/resourceGroups/npeAppNtwWu2Rg/providers/Microsoft.Network/virtualNetworks/npeAppWu2Vnet"
+        },
+        "subnetName": {
+            "value": "NpeWkdWu2PvtSubnet"
+        },
+        "networkInterfaceName": {
+            "value": "satta-test24"
         }
     }
 }
