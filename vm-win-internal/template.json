@@ -2,9 +2,6 @@
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "location": {
-            "type": "string"
-        },
         "networkInterfaceName": {
             "type": "string"
         },
@@ -42,14 +39,15 @@
     "variables": {
         "vnetId": "[parameters('virtualNetworkId')]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', parameters('subnetName'))]",
-        "diagnosticsExtensionName": "Microsoft.Insights.VMDiagnosticsSettings"
+        "diagnosticsExtensionName": "Microsoft.Insights.VMDiagnosticsSettings",
+        "location": "[resourceGroup().location]"
     },
     "resources": [
         {
             "name": "[parameters('networkInterfaceName')]",
             "type": "Microsoft.Network/networkInterfaces",
             "apiVersion": "2018-10-01",
-            "location": "[parameters('location')]",
+            "location": "[variables('location')]",
             "dependsOn": [],
             "properties": {
                 "ipConfigurations": [
@@ -70,7 +68,7 @@
             "name": "[parameters('virtualMachineName')]",
             "type": "Microsoft.Compute/virtualMachines",
             "apiVersion": "2018-06-01",
-            "location": "[parameters('location')]",
+            "location": "[variables('location')]",
             "dependsOn": [
                 "[concat('Microsoft.Network/networkInterfaces/', parameters('networkInterfaceName'))]"
             ],
@@ -122,7 +120,7 @@
             "name": "[concat(parameters('virtualMachineName'),'/', variables('diagnosticsExtensionName'))]",
             "type": "Microsoft.Compute/virtualMachines/extensions",
             "apiVersion": "2017-12-01",
-            "location": "[parameters('location')]",
+            "location": "[variables('location')]",
             "properties": {
                 "publisher": "Microsoft.Azure.Diagnostics",
                 "type": "IaaSDiagnostics",
