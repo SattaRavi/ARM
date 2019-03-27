@@ -25,7 +25,7 @@
         },
         "diagnosticsStorageAccountId": {
             "type": "string"
-        }
+        },
         "virtualNetworkId": {
             "type": "string"
         },
