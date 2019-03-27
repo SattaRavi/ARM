@@ -2,25 +2,16 @@
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "networkInterfaceName": {
-            "type": "string"
-        },
-        "subnetName": {
-            "type": "string"
-        },
-        "virtualNetworkId": {
-            "type": "string"
-        },
         "virtualMachineName": {
             "type": "string"
         },
         "virtualMachineRG": {
             "type": "string"
         },
-        "osDiskType": {
+        "virtualMachineSize": {
             "type": "string"
         },
-        "virtualMachineSize": {
+        "osDiskType": {
             "type": "string"
         },
         "adminUsername": {
@@ -33,6 +24,15 @@
             "type": "string"
         },
         "diagnosticsStorageAccountId": {
+            "type": "string"
+        }
+        "virtualNetworkId": {
+            "type": "string"
+        },
+        "subnetName": {
+            "type": "string"
+        },
+        "networkInterfaceName": {
             "type": "string"
         }
     },
