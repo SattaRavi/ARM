@@ -10,6 +10,9 @@
         },
         "instanceCount": {
             "type": "int"
+        },
+        "indexOffset":{
+            "type": "int"
         }
     },
     "variables": {},
@@ -18,7 +21,7 @@
             "type": "Microsoft.Resources/resourceGroups",
             "apiVersion": "2018-05-01",
             "location": "[parameters('rgLocation')]",
-            "name": "[concat(parameters('rgNamePrefix'), copyIndex())]",
+            "name": "[concat(parameters('rgNamePrefix'), copyIndex(parameters('indexOffset')))]",
             "copy": {
                 "name": "rgCopy",
                 "count": "[parameters('instanceCount')]"
